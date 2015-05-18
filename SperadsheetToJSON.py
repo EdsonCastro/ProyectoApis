@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 import io
-import simplejson as json
+import json
 import requests
 from json2html import * 
 

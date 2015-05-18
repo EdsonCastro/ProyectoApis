@@ -3,7 +3,7 @@
   <title>
     Tareas de Entrega 01 Proyecto Apis.
   </title>
-  <link rel="stylesheet"  type="text/css" href="{{url_for('static', filename='estilos.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='estilos.css')}}" type='text/css'>
   
 </head>  
 
@@ -20,31 +20,26 @@
 		</form>
 	  </td><td>
 		<form action="/vermytwitter" method="POST">
-	  	<input type="submit" name="my-form" class="button buttonBlue" value="Twitter" >
+	  	<input type="submit" name="my-form" class="button buttonBlue" value="Ver mi twitter" >
 		</form>
 	  </td><td>
 		<form action="/vermygooglecalendar" method="POST">
-		<input type="submit" name="my-form" class="button buttonBlue" value="Google calendar">
+		<input type="submit" name="my-form" class="button buttonBlue" value="Ver mi google calendar">
 		</form>
 	  </td></tr>
-	<tr><td>
+	  <tr><td>
 		<form action="/formularionotasexamen" method="POST">
 		<input type="submit" name="my-form" class="button buttonBlue" value="Publicar notas de examen">
 		</form>
 	  </td><td>
-		<form action="/vermytwitter" method="POST">
-	  	<input type="submit" name="my-form" class="button buttonBlue" value="Twitter">		
+		<form action="/vernotas" method="POST">
+		<input type="submit" name="my-form" class="button buttonBlue" value="Ver notas">
 		</form>
 	  </td><td>
-		<form action="/vernotasgoogle" method="POST">
-		<input type="submit" name="my-form" class="button buttonBlue" value="Notas (Hoja de calculo en google)">
-		</form>
-	  </td></tr>
-	<tr><td></td><td>
 		<form action="/salir" method="POST">
 		<input type="submit" name="my-form" class="button buttonBlue" value="Salir">
 		</form>
-	</td><td></td></tr>     
+	  </td></tr>    
     </table>
   </div>
 </body>

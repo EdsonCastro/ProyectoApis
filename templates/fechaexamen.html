@@ -3,28 +3,33 @@
   <title>
     Publicar fecha de examen.
   </title>
-  <link rel="stylesheet"  type="text/css" href="{{url_for('static', filename='estilos.css')}}">  
+  <link rel="stylesheet" href="{{url_for('static', filename='estilos.css')}}" type='text/css'>
+  
 </head>  
   <h1>
-  <p>Formulario para publicar fecha del examen.<p/>
+    <p>Formulario para publicar fecha del examen.<p/>
   </h1>
-  <p>Rellene el formulario con los datos necesarios para publicar la fecha del examen, esta fecha se publicara en su twitter y google caldendar, para que los alumnos suscritos puedan verlo.<p/> 
-
+  <h3>
+    <p>Rellene el formulario para publicar la fecha del examen, la fecha se publicara twitter y google caldendar.<p/> 
+  </h3>
 <body>
   <div>
-  <form action="/publicarfechaexamen" method="POST" style="display:inline">
-	<table width="400" BORDER=0  CELLPADDING=0 CELLSPACING=0>
-	 <tr><td>Asignatura:</td> <td><input type="text" name="asignatura"> </td></tr>
-	 <tr><td>Profesor:</td> <td><input type="text" name="profesor"> </td></tr>
-    	 <tr><td>Examen:</td> <td><input type="text" name="tipoexamen"> </td></tr>
-    	 <tr><td>Fecha:</td> <td><input type="text" name="fechaexamen"> </td></tr>
-    	 <tr><td>Comentario</td> <td><textarea name="comentarios"> </textarea></td></tr>    	 
-	</table>
-     <input type="submit" name="my-form" class="button buttonBlue" value="Publicar twitter & google calendar">
-   </form>
-   <form action="/tareas" method="POST" style="display:inline">
-     <input type="submit" name="my-form" class="button buttonBlue" value="Tareas">		
-  </form>
+  <table  BORDER=0  CELLPADDING=10 CELLSPACING=10>
+  <tr><td WIDTH=300 VALIGN=TOP>	
+  <form action="/publicarfechaexamen" method="POST">
+	 Hora incio:<input type="text" name="hinicio">
+	 </br>
+     Hora Fin:<input type="text" name="hfin">
+	 </br>
+     Lugar:<input type="text" name="lugar"> 
+	   <input type="submit" name="my-form" class="button buttonBlue" value="Publicar twitter & calendar">
+     </form></td><td>
+
+    <form action="/tareas" method="POST" style="display:inline">
+      <input type="submit" name="my-form" class="button buttonBlue" value="Tareas">		
+    </form>
+    </td></tr>
+  </table>
   </div>
 </body>
 </html>

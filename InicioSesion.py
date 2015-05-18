@@ -1,11 +1,10 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*- 
-#from IDtwitter import *          #Modulo con los tokens de twitter.
-from HojagoogletoJSON import *
+
+from SperadsheetToJSON import *
 from AgregarAlumno import *
 from EliminarAlumno import *
-from filetoDropbox import *
-import twitter
+from FiletoDropbox import *
 import io
 import os                         #para redireccionar la url
 import json
@@ -15,16 +14,16 @@ from crypt import crypt
 
 app = Flask(__name__)
 
-
+#Cdigo que redireccionaria iniciando session y mostrando el google calendar.
 @app.route("/vermygooglecalendar", methods=['POST'])
 def vermygooglecalendar():
-    #aca iria el codigo que redireccionaria iniciando session y mostrando el google calendar.
+    
     return render_template('tareas.html')
 
+#Codigo que redireccionaria a twitter.
 @app.route("/vermytwitter", methods=['POST'])
-def vermytwitter():
-    #aca iria el codigo que redireccionaria iniciando session en twitter.
-    return render_template('tareas.html')
+def vermytwitter():    
+    return redirect("https://twitter.com/Proyecto_Apis",code=302)
 
 #Muestra la Hoja de calculo de las notas.
 @app.route("/vernotasgoogle", methods=['POST'])
@@ -70,7 +69,7 @@ def publicarfechaexamen():
 
 @app.route("/formularionotasexamen", methods=['POST'])
 def formularionotasexamen():
-    googletoTabla()
+    #googletoTabla()
     return render_template('notasexamen.html')
 
 @app.route("/formulariofechaexamen", methods=['POST'])
