@@ -3,7 +3,7 @@
 
 #Elimina el primer alumno con ese nombre de la lista
 def eliminarAlumno(nombre):
-    f = open('output.json','r')
+    f = open('outputNotas.json','r')
     cadena = f.read()
     #nombre = 'Mario'
     #nota = '8'
@@ -46,7 +46,7 @@ def eliminarAlumno(nombre):
                     indice = len(cadena)
             indice += 1
     #print msj
-    f = open('output.json','w')
+    f = open('outputNotas.json','w')
     f.write(cadena)
     f.close()
     return msj

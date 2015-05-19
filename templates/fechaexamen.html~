@@ -17,7 +17,7 @@
   <table  BORDER=0  CELLPADDING=10 CELLSPACING=10>
   <tr><td WIDTH=300 VALIGN=TOP>	
   <form action="/pubfechaexamen" method="POST">
-	 Hora incio:<input type="text" name="hinicio">
+	 Hora incio (yyyy-mm-ddThh:mm:ss):<input type="text" name="hinicio">
 	 </br>
          Hora Fin:<input type="text" name="hfin">
 	 </br>

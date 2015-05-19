@@ -40,7 +40,11 @@
 		<input type="submit" name="my-form" class="button buttonBlue" value="Descargar notas Dropbox">
 		</form>
 	  </td></tr>
-	<tr><td></td><td>
+	<tr><td>
+		<form action="/verdocumentoproyeto" method="POST">
+		<input type="submit" name="my-form" class="button buttonBlue" value="Documento Proyecto">
+		</form>
+	</td><td>
 		<form action="/salir" method="POST">
 		<input type="submit" name="my-form" class="button buttonBlue" value="Salir">
 		</form>

@@ -3,7 +3,7 @@
 
 #Agrega el Alumno a la cadena de caracteres, concatena y guarda la cadena concatenada en el fichero.
 def agregaralumnonota(nombre, nota, estado):
-    f = open('output.json','r')
+    f = open('outputNotas.json','r')
     cadena = f.read()
     f.close()
     #nombre = 'Mario'
@@ -12,6 +12,6 @@ def agregaralumnonota(nombre, nota, estado):
     conca = ', {"Nombre": "'+nombre+'", "Nota": "'+nota+'", "Estado": "'+estado+'"}'
     cadena = cadena[:(len(cadena)-2)]+conca+cadena[(len(cadena)-2):]
     #print cadena, len(cadena)        
-    f = open('output.json','w')
+    f = open('outputNotas.json','w')
     f.write(cadena)
     f.close()

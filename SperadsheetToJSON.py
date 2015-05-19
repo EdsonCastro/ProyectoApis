@@ -5,7 +5,8 @@ import json
 import requests
 from json2html import * 
 
-
+#Este modulo es para descargar de la tabla de Srpreadsheet de google, las notas a un archivo JSON
+#lo utilizamos como base de datos.
 def googletoTabla():
     #your spreadsheet key here. I'm using an example from the Victorian election campaign
 
@@ -54,7 +55,7 @@ def googletoTabla():
 
     #saves the json file locally as output.json. you could do other stuff with it though, like put it on a server somewhere 
 
-    with open('output.json','w') as fileOut:
+    with open('outputNotas.json','w') as fileOut:
             fileOut.write(newJson)
     
     f = open("templates/tabla.html" , "w")
@@ -63,7 +64,7 @@ def googletoTabla():
     f.close()
             
 def generarTabla():
-    f = open("output.json" , "r")
+    f = open("outputNotas.json" , "r")
     cadena = f.read()
     f.close()
     f = open("templates/tabla.html" , "w")

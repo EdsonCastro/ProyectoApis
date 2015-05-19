@@ -9,7 +9,7 @@ def actulizarNotasDropbox():
     flow = dropbox.client.DropboxOAuth2FlowNoRedirect(app_key, app_secret)
     client = dropbox.client.DropboxClient('NVkhEjuWdRAAAAAAAAAADe5DY4rB159Qpi6xyq7ZrFowPNbJcs23noGMNyPu5d5E')
 
-    archivo = open('output.json', 'rb')
+    archivo = open('outputNotas.json', 'rb')
     response = client.put_file('/outputNotas.json', archivo, True)
     #print 'uploaded: ', response
     
@@ -22,10 +22,10 @@ def descargarTabla():
     client = dropbox.client.DropboxClient('NVkhEjuWdRAAAAAAAAAADe5DY4rB159Qpi6xyq7ZrFowPNbJcs23noGMNyPu5d5E')
     #folder_metadata = client.metadata('/')
     #print 'metadata: ', folder_metadata
-    #f = open('output.json', 'rb')    
+    #f = open('outputNotas.json', 'rb')    
     f, metadata = client.get_file_and_metadata('/outputNotas.json')
     print metadata
-    out = open('output.json', 'wb')
+    out = open('outputNotas.json', 'wb')
     out.write(f.read())
     out.close()
     

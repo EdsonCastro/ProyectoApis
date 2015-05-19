@@ -31,16 +31,18 @@
 	<input type="submit" name="my-form" class="button buttonBlue" value="Eliminar alumno">
     </form>
     </td><td>
-
-	<form action="/publnotasexamen" method="POST" style="display:inline">
-	   <input type="submit" name="my-form" class="button buttonBlue" value="Publicar Hoja de calculo & twitt" >
-	</form>
-	<form action="/vernotas" method="POST">
-	    <input type="submit" name="my-form" class="button buttonBlue" value="Ver notas">
-	</form>	
-	<form action="/tareas" method="POST" style="display:inline">
-	   <input type="submit" name="my-form" class="button buttonBlue" value="Tareas">		
-	</form>
+    <form action="/pubnotasexamen" method="POST" style="display:inline">
+	 <input type="submit" name="my-form" class="button buttonBlue" value="Publicar Hoja de calculo & twitt" >
+    </form>
+    <form action="/vernotas" method="POST">
+	 <input type="submit" name="my-form" class="button buttonBlue" value="Ver notas">
+    </form>	
+    <form action="/vernotasgoogle" method="POST">
+	 <input type="submit" name="my-form" class="button buttonBlue" value="Ver Hoja de calculo en google)">
+    </form>
+    <form action="/tareas" method="POST" style="display:inline">
+	 <input type="submit" name="my-form" class="button buttonBlue" value="Tareas">		
+    </form>
     </td></tr>
 </table>
 	 
