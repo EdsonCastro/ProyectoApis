@@ -46,7 +46,7 @@ def login_calendar():
     credentials = storage.get()
     if credentials is None or credentials.invalid == True:
         credentials = run(FLOW, storage)
-		
+
     http = httplib2.Http()
     http = credentials.authorize(http)
 

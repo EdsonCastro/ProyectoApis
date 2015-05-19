@@ -7,21 +7,26 @@ def actulizarNotasDropbox():
     app_secret = 'lqd33odxs1ada3t'
 
     flow = dropbox.client.DropboxOAuth2FlowNoRedirect(app_key, app_secret)
-
-
-    # Have the user sign in and authorize this token
-    #authorize_url = flow.start()
-    #print '1. Go to: ' + authorize_url
-    #print '2. Click "Allow" (you might have to log in first)'
-    #print '3. Copy the authorization code.'
-    #code = raw_input("Enter the authorization code here: ").strip()
-
-    # This will fail if the user enters an invalid authorization code
-    #access_token, user_id = flow.finish(code)
-
     client = dropbox.client.DropboxClient('NVkhEjuWdRAAAAAAAAAADe5DY4rB159Qpi6xyq7ZrFowPNbJcs23noGMNyPu5d5E')
-    #print 'linked account: ', client.account_info()
-    #respuesta = client.file_delete('/hp.txt')
+
     archivo = open('output.json', 'rb')
     response = client.put_file('/outputNotas.json', archivo, True)
     #print 'uploaded: ', response
+    
+    
+def descargarTabla():
+    app_key = '887r2dpkbvj5l3e'
+    app_secret = 'lqd33odxs1ada3t'
+
+    flow = dropbox.client.DropboxOAuth2FlowNoRedirect(app_key, app_secret)
+    client = dropbox.client.DropboxClient('NVkhEjuWdRAAAAAAAAAADe5DY4rB159Qpi6xyq7ZrFowPNbJcs23noGMNyPu5d5E')
+    #folder_metadata = client.metadata('/')
+    #print 'metadata: ', folder_metadata
+    #f = open('output.json', 'rb')    
+    f, metadata = client.get_file_and_metadata('/outputNotas.json')
+    print metadata
+    out = open('output.json', 'wb')
+    out.write(f.read())
+    out.close()
+    
+    

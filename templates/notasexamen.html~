@@ -32,7 +32,7 @@
     </form>
     </td><td>
 
-	<form action="/pubnotasexamen" method="POST" style="display:inline">
+	<form action="/publnotasexamen" method="POST" style="display:inline">
 	   <input type="submit" name="my-form" class="button buttonBlue" value="Publicar Hoja de calculo & twitt" >
 	</form>
 	<form action="/vernotas" method="POST">

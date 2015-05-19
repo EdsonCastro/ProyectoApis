@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-from login import *
+from LoginTwitterCalendar import *
 from flask import request
 from flask import Flask,render_template
 
@@ -13,32 +13,32 @@ url = 'https://docs.google.com/spreadsheets/d/1FMVP1auyd-8cTj0QIOElNZ0CB_FATzNnY
 def vermytwitter():
     stats = twitt.home_timeline(count = 5)
     for tweet in stats:
-	    print tweet.text+'\n'
+        print tweet.text+'\n'
 
 def publicarnotasexamen():
     try:
-	    twitt.update_status(status = 'Publicada las notas del examen '+url)
+        twitt.update_status(status = 'Publicada las notas del examen '+url)
     except:
-		print 'Tweet ya publicado.'
+        print 'Tweet ya publicado.'
 
-def publicarfechaexamen():
+def publicarfechaexamen(hinicio,hfin,aula):
     try:
-        hinicio = request.form['hinicio'] #yyyy-mm-ddThh:mm:ss
-        hfin =  request.form['hfin']     #yyyy-mm-ddThh:mm:ss
-        aula = request.form['aula']
+        #hinicio = request.form['hinicio'] #yyyy-mm-ddThh:mm:ss
+        #hfin =  request.form['hfin']     #yyyy-mm-ddThh:mm:ss
+        #aula = request.form['aula']
         examencalendar(aula,hinicio,hfin)
         twitt.update_status(status = 'Publicado examen en google calendar')
-	except:
-	    print 'Tweet ya publicado.'
+    except:
+        print 'Tweet ya publicado.'
 
 def eliminarultimotweet():
-	stats = twitt.user_timeline(count = 1)
-	eliminartweets(stats)
-	
+    stats = twitt.user_timeline(count = 1)
+    eliminartweets(stats)
+
 def eliminartweets(stats):
-	for tweet in stats:
-	    twitt.destroy_status(tweet.id)
-		
+    for tweet in stats:
+        twitt.destroy_status(tweet.id)
+
 #-----------------------------------------------------------GOOGLE_CALENDAR-----------------------------------------------------------
 service = login_calendar()
 
@@ -56,7 +56,7 @@ def vermygooglecalendar():
 
 def examencalendar(aula,hinicio,hfin):
     evento = {
-	    'summary': 'EXAMEN',
+        'summary': 'EXAMEN',
         'location': aula,
         'start': {
             'dateTime': hinicio,

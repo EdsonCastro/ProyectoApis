@@ -26,6 +26,7 @@
 	  Contrase&#241a:<input type="text" name="passwd">	  
 	  <input type="submit" name="my-form" class="button buttonBlue" value="iniciar sesi&#243n">	  	  
 	</form>
+	<br/>	
 	</td>	
 	</tr>
      </table>

@@ -59,7 +59,7 @@ def googletoTabla():
     
     f = open("templates/tabla.html" , "w")
     f.write(json2html.convert(json = newJson))
-    f.write('<form action="/tareas" method="POST" style="display:inline"> <input type="submit" name="my-form" class="button buttonBlue" value="Tareas"></form>')
+    f.write('<form action="/formularionotasexamen" method="POST" style="display:inline"> <input type="submit" name="my-form" class="button buttonBlue" value="Publicar notas examen"></form>')    
     f.close()
             
 def generarTabla():
@@ -68,5 +68,5 @@ def generarTabla():
     f.close()
     f = open("templates/tabla.html" , "w")
     f.write(json2html.convert(json = cadena))
-    f.write('<form action="/tareas" method="POST" style="display:inline"> <input type="submit" name="my-form" class="button buttonBlue" value="Tareas"></form>')    
+    f.write('<form action="/formularionotasexamen" method="POST" style="display:inline"> <input type="submit" name="my-form" class="button buttonBlue" value="Publicar notas examen"></form>')    
     f.close()     
